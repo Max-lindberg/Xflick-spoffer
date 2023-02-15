@@ -41,7 +41,7 @@ def delete_file():
     listbox.delete(selected_item)  # Fjern filen fra listen
 
 # Angiv stien til FiveM-mappen
-fivem_path = os.path.expanduser("~") + "/AppData/Local/FiveM"
+fivem_path = os.path.expanduser("~") + "/\AppData\Local\FiveM\FiveM.app"
 
 # Skift til FiveM-mappen
 os.chdir(fivem_path)
@@ -59,3 +59,6 @@ button_delete.pack()
 
 # Vis hovedvindue
 root.mainloop()
+
+
+
