@@ -41,24 +41,26 @@ def delete_file():
     listbox.delete(selected_item)  # Fjern filen fra listen
 
 # Angiv stien til FiveM-mappen
-fivem_path = os.path.expanduser("~") + "/\AppData\Local\FiveM\FiveM.app"
+fivem_path = os.path.expanduser("~") + "/AppData/Local/FiveM"
 
-# Skift til FiveM-mappen
-os.chdir(fivem_path)
+try:
+    # Skift til FiveM-mappen
+    os.chdir(fivem_path)
 
-# Opret liste over filer
-files = os.listdir()
-listbox = tk.Listbox(root)
-for file in files:
-    listbox.insert(tk.END, file)
-listbox.pack()
+    # Opret liste over filer
+    files = os.listdir()
+    listbox = tk.Listbox(root)
+    for file in files:
+        listbox.insert(tk.END, file)
+    listbox.pack()
 
-# Opret knap til at slette fil
-button_delete = tk.Button(root, text="Slet fil", command=delete_file)
-button_delete.pack()
+    # Opret knap til at slette fil
+    button_delete = tk.Button(root, text="Slet fil", command=delete_file)
+    button_delete.pack()
+
+except FileNotFoundError:
+    # Vis en fejlmeddelelse, hvis FiveM-mappen ikke kunne findes
+    tk.messagebox.showerror("Fejl", "Could not find your fivem...")
 
 # Vis hovedvindue
 root.mainloop()
-
-
-
