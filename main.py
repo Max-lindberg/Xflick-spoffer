@@ -8,12 +8,12 @@ print("  ▄█   ▀██▄   ██      ██   ██ ██▄    ▄ �
 print("▄██▄▄  ▄▄███▄████▄  ▄████▄████▄█████▀▄████▄ ██▄▄    ██████▀ ██████▀   ▀█████▀▄████▄ ▄████▄   ▀█████▀████▄")
 print("                                                           ██")
 print("                                                         ▄████▄")
-key = "a"
 
+keylist = ["t9R#x8uKp$z%Y5", "7jL@vPmN&c2Q*H", "s6G$bDf3nE!wA4", "F8#yMhT%Zx9k1U", "qW@pXoRm7V*JlI", "e2C$dSjN&g5BtK", "6iA!kOwYf#G4xL", "b1U@2JyH9q3MvP", "V$rS0nT7zFt@Ll", "h5N#fXc9B!sWd8", "a4Z*mPwJ@u&yK7", "Q8@8HbU9gNt1Ei", "2rC#kLl3nWfV7I", "D$pRt@hXm6yGxK", "g1A&fYlN5zW!oB"]
 
 inputkey = input("Enter your key/password: ")
 
-if inputkey == key:
+if inputkey == keylist[0] or [1] or [2] or [3] or [4]:
     print("Ok we will load the spoffer")
 else:
     print(inputkey + " Is not a valid key")
@@ -41,7 +41,7 @@ def delete_file():
     listbox.delete(selected_item)  # Fjern filen fra listen
 
 # Angiv stien til FiveM-mappen
-fivem_path = os.path.expanduser("~") + "/\AppData\Local\FiveM\FiveM.app"
+fivem_path = os.path.expanduser("~") + "/AppData/Local/FiveM"
 
 try:
     # Skift til FiveM-mappen
@@ -64,3 +64,4 @@ except FileNotFoundError:
 
 # Vis hovedvindue
 root.mainloop()
+
