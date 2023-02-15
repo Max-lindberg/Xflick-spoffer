@@ -26,7 +26,6 @@ print("-------------------------------------------------------------------------
 print("change your fivem version to release")
 print("------------------------------------------------------------------------------------------------")
 
-
 import os
 import tkinter as tk
 from tkinter import filedialog
@@ -41,9 +40,11 @@ def delete_file():
     os.remove(file_path)  # Slet filen
     listbox.delete(selected_item)  # Fjern filen fra listen
 
-# Vælg startmappen
-start_folder_path = filedialog.askdirectory()
-os.chdir(start_folder_path)
+# Angiv stien til FiveM-mappen
+fivem_path = os.path.expanduser("~") + "/AppData/Local/FiveM"
+
+# Skift til FiveM-mappen
+os.chdir(fivem_path)
 
 # Opret liste over filer
 files = os.listdir()
