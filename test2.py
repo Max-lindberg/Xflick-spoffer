@@ -1,21 +1,19 @@
-# Import required libraries
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
-# Define function to delete files
 def delete_fivem():
-    # Find the path to fivem.exe
+    # Find der hvor fivem ligger
     fivem_path = filedialog.askdirectory(initialdir="C:/", title="Select your FiveM folder")
     logs = os.path.join(fivem_path, "Logs")
     digital_integration = os.path.join(fivem_path, "Digital Intelements")
     files_to_delete = [logs, digital_integration]
 
-    # Show which files will be deleted and ask for confirmation
+    # Hvilke filer der blivet slettet
     message = f"The following files will be deleted:\n\n{logs}\n{digital_integration}\n\nAre you sure you want to continue?"
     confirm = messagebox.askokcancel("Confirm Deletion", message)
     if confirm:
-        # Delete the files
+        # Slet filerne
         for file in files_to_delete:
             try:
                 os.remove(file)
@@ -23,12 +21,12 @@ def delete_fivem():
             except OSError as e:
                 print(f"Error deleting {file}: {e.strerror}")
 
-# Create main window
+# Lav et vindue
 root = tk.Tk()
 
-# Create button to delete files
+# Knap til at slette filerne
 button = tk.Button(root, text="Delete Digital Intelements", command=delete_fivem)
 button.pack()
 
-# Show main window
+# få vinduet fram
 root.mainloop()
