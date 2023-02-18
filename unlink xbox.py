@@ -56,3 +56,4 @@ delete_button.pack()
 
 # Vis hovedvindue
 root.mainloop()
+#I will finish it in 3 days
